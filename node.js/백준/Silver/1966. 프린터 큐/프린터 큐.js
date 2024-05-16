@@ -14,10 +14,9 @@ for (let i = 0; i < count; i++) {
   const queue = [];
 
   while (queue.length < docCount) {
-    const doc = docs[0];
+    const doc = docs.shift();
     const isFirst = docs.every((restDoc) => restDoc.priority <= doc.priority);
 
-    docs.shift();
     if (isFirst) queue.push(doc);
     else docs.push(doc);
   }
