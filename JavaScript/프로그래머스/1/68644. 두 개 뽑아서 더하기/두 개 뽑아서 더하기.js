@@ -1,11 +1,11 @@
 function solution(numbers) {
     const answer = [];
     
-    numbers.forEach((aNum, aIdx) => {
-        numbers.forEach((bNum, bIdx) => {
-            if (aIdx !== bIdx) answer.push(aNum + bNum);
-        });
-    });
+    for (let i = 0; i < numbers.length; i++) {
+        for (let j = i + 1; j < numbers.length; j++) {
+            answer.push(numbers[i] + numbers[j]);
+        }
+    }
     
     return Array.from(new Set(answer)).sort((a, b) => a - b);
 }
